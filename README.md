@@ -24,7 +24,7 @@ This is a police dispatch and scheduling system for police headquarter
 
 1. clone專案
 '''bash
-git clone https://github.com/yourusername/police-schedule-system.git
+git clone git@github.com:yuhao831068/Police-officer-dispatch-system.git
 cd police-schedule-system
 '''
 
