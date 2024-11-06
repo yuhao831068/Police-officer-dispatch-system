@@ -51,18 +51,38 @@ mysql_password=your_password
 ### Employee_Shift 表 (員工資料)
 | 欄位          | 型別         | 說明     |
 |--------------|-------------|----------|
-| S_ID         | VARCHAR(10) | 警員編號  |
+| S_ID         | VARCHAR(10) | 警員編號(PK) |
 | name         | VARCHAR(50) | 姓名     |
-| team         | VARCHAR(10) | 所屬隊伍  |
+| team         | VARCHAR(30) | 所屬隊伍  |
 | job_rank     | VARCHAR(20) | 職級     |
-| current_shift| VARCHAR(20) | 目前假檔  |
+| current_shift| VARCHAR(10) | 目前假檔  |
 
-### Shift 表 (班表)
+### Teams 表 (隊伍資料)
+| 欄位            | 型別         | 說明     |
+|----------------|-------------|----------|
+| team_id        | INT         | 隊伍編號(PK) |
+| team_leader_id | VARCHAR(10) | 隊長編號(FK) |
+| team_leader2_id| VARCHAR(10) | 第二隊長編號(FK,僅給第10隊使用) |
+| member1_id     | VARCHAR(10) | 隊員1編號(FK) |
+| member2_id     | VARCHAR(10) | 隊員2編號(FK) |
+| member3_id     | VARCHAR(10) | 隊員3編號(FK) |
+| member4_id     | VARCHAR(10) | 隊員4編號(FK) |
+| member5_id     | VARCHAR(10) | 隊員5編號(FK) |
+| member6_id     | VARCHAR(10) | 隊員6編號(FK) |
+| member7_id     | VARCHAR(10) | 隊員7編號(FK) |
+
+### Shift_Type 表 (班別類型)
+| 欄位          | 型別         | 說明     |
+|--------------|-------------|----------|
+| type_name    | VARCHAR(20) | 班別名稱(PK) |
+| allowed_rank | VARCHAR(20) | 允許職級  |
+
+### Shift 表 (排班資料)
 | 欄位       | 型別         | 說明     |
 |-----------|-------------|----------|
-| id        | INT         | 自動編號  |
+| shift_id  | INT         | 班表編號(PK) |
 | shift_name| VARCHAR(20) | 班別名稱  |
-| S_ID      | VARCHAR(10) | 警員編號  |
+| S_ID      | VARCHAR(10) | 警員編號(FK) |
 | shift_date| DATE        | 日期     |
 | team_order| INT         | 檔排序   |
 | day_order | INT         | 日排序   |
